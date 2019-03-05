@@ -1,0 +1,56 @@
+<div>
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="center center" class="content">
+      <mat-card class="card" >
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+          <h3>Countries</h3>
+        </mat-card-title>
+        <mat-card-content>
+          <div class="example-container mat-elevation-z8">
+
+            <mat-table #table [dataSource]="dataSource"
+                       matSort matSortActive="victoryScore" matSortDirection="desc">
+
+              <!-- Name -->
+              <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+              </ng-container>
+
+              <!-- Victory Score -->
+              <ng-container matColumnDef="victoryScore">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Victory Score</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.victoryScore | number:'0.0-0' }}</mat-cell>
+              </ng-container>
+
+              <!-- Tech Power -->
+              <ng-container matColumnDef="techPower">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Tech Power</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.techPower | number:'0.0-0' }}</mat-cell>
+              </ng-container>
+
+              <!-- Military Power -->
+              <ng-container matColumnDef="militaryPower">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Military Power</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.militaryPower | number:'0.0-0' }}</mat-cell>
+              </ng-container>
+
+              <!-- Economic Power -->
+              <ng-container matColumnDef="economyPower">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Economic Power</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.economyPower | number:'0.0-0' }}</mat-cell>
+              </ng-container>
+
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngFor='let country of countries'> {{ country.name }} </div>

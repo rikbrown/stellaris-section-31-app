@@ -1,0 +1,7 @@
+<mat-form-field floatLabel="never">
+  <mat-select placeholder="Game" [(ngModel)]="selectedGame">
+    <mat-option *ngFor="let gameName of gameNames" [value]="gameName">
+      {{gameName}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
