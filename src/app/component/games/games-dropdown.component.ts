@@ -19,6 +19,7 @@ export class GamesDropdownComponent implements OnInit {
 
   @Input()
   set selectedGame(name: string) {
+    console.log(`selected: ${name}`);
     this._selectedGame = name;
     this.gameSelected.emit(name);
   }

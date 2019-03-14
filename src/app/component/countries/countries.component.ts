@@ -1,10 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { CountryService } from "./country.service";
-import {PerennialCountryData} from "./types";
-import {DataSource} from "@angular/cdk/table";
-import {Observable} from "rxjs";
+import { CountryService } from "service/country.service";
+import {PerennialCountryData} from "types";
 import {MatSort, MatTableDataSource} from "@angular/material";
-import {ConfigService} from "./service/config.service";
+import {ConfigService} from "service/config.service";
 
 @Component({
   selector: 'app-countries',
@@ -37,7 +35,6 @@ export class CountriesComponent implements OnInit {
 
 
   private subscribeCountries(): void {
-    this.configService.gameChanged.subscribe(countryName => this.updateCountries(countryName));
     this.updateCountries(this.configService.currentGame)
   }
 

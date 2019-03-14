@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import {BasicCountryStats, PerennialCountryData} from './types'
+import {BasicCountryStats, PerennialCountryData} from 'types'
 
 @Injectable({
   providedIn: 'root'

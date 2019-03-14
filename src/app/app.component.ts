@@ -17,18 +17,13 @@ export class AppComponent implements OnInit {
     private router: DeepRouterService) { }
 
   onGameChange(name: string) {
-    if (name == null) return;
-    this.configService.currentGame = name;
-    console.log(this.router.activatedRoute.snapshot)
-
-
+    if (name == this.configService.currentGame) return;
+    this.router.navigate(["/", "game", name]);
   }
 
   ngOnInit(): void {
-
-
     this.router.getActivatedRouteParams().subscribe(params => {
-      this.onGameChange(params.get('gameName'))
+      this.configService.currentGame = params.get('gameName');
     })
   }
 

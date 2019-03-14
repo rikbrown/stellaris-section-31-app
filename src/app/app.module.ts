@@ -7,7 +7,7 @@ import { MaterialIncludesModule } from "./material-includes.module";
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { CountriesComponent } from "./countries.component";
+import { CountriesComponent } from "./component/countries/countries.component";
 import { IndexComponent } from './component/index.component';
 import { GamesDropdownComponent } from "./component/games/games-dropdown.component";
 
